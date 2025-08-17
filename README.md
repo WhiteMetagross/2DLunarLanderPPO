@@ -42,7 +42,7 @@ Implementation notes for this repo:
 - Value network (vf): [128, 128] hidden units with Tanh activations
 - Policy type: stable_baselines3 PPO with "MlpPolicy" and separate pi/vf nets (net_arch)
 
-### Hyperparameters (from config.py)
+### Hyperparameters (from config.py):
 
 | Name | Value | Description |
 |---|---:|---|
@@ -77,7 +77,7 @@ Additional configuration:
 - EvalCallback: eval_freq=50_000, n_eval_episodes=5, deterministic=True
 - Early stop: StopTrainingOnRewardThreshold(reward_threshold=200)
 
-### Training Procedure
+### Training Procedure:
 - Parallel rollout collection using 16 SubprocVecEnv workers.
 - Each update uses 2048 steps per environment (i.e., 2048 × 16 transitions per PPO update in SB3’s vectorized rollout semantics) with minibatch SGD (batch_size=256) for 11 epochs.
 - TensorBoard scalars (e.g., rollout/ep_rew_mean) are logged under logs/ for visualization.
@@ -86,7 +86,7 @@ Additional configuration:
 
 ---
 
-## Project Structure
+## Project Structure:
 
 ```
 2DLunarLanderContinuousPPO/
@@ -115,7 +115,7 @@ Entry points:
 
 ---
 
-## Dependencies and Setup
+## Dependencies and Setup:
 
 Tested with Python 3.11 on Windows 11. Recommended package set:
 - stable-baselines3 >= 2.0.0
@@ -135,9 +135,9 @@ Notes:
 
 ---
 
-## Usage Guide
+## Usage Guide:
 
-### Train
+### Train:
 ```bash
 python train.py
 ```
@@ -162,7 +162,7 @@ Arguments:
 - --no-render: disable onscreen rendering
 - --plot: save a per episode reward plot to results/
 
-### Visualize Training Logs
+### Visualize Training Logs"
 ```bash
 python training_visualisation.py --log-dir logs/ --smooth-window 100
 ```
@@ -170,7 +170,7 @@ Flags:
 - --no-show: only save plots
 - --no-save: only display plots
 
-### Hyperparameter Tuning (Optuna)
+### Hyperparameter Tuning (Optuna):
 ```bash
 python hyperparameterOptimizer.py
 ```
@@ -252,7 +252,7 @@ visuals:
 
 ---
 
-## Specifications: Environment
+## Specifications: Environment:
 
 Environment: Gymnasium LunarLander-v3 with continuous control.
 
@@ -283,7 +283,7 @@ Termination conditions:
 
 ---
 
-## Modifying Configurations.
+## Modifying Configurations:
 
 Edit config.py to change:
 - Environment (ENV_NAME, ENV_KWARGS, N_ENVS)
@@ -298,7 +298,7 @@ PPO_PARAMS["device"] = "cuda"
 
 ---
 
-## Reproducibility
+## Reproducibility:
 - Fixed random seed: 17 (in PPO_PARAMS and passed to env creation)
 - Deterministic evaluation (deterministic=True)
 - Clear logging and artifact paths for experiments (models/, logs/, results/)
