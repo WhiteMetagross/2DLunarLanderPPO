@@ -1,6 +1,8 @@
 ## 2D Lunar Lander Continuous Control with Proximal Policy Optimization (PPO).
 
-A reproducible, SB3-based implementation of PPO for continuous control on the Gymnasium Lunar Lander environment (LunarLander-v3 with continuous controls). The project includes training, evaluation, TensorBoard-driven visualization utilities, and Optuna hyperparameter tuning.
+A reproducible, SB3-based implementation of PPO for continuous control on the Gymnasium Lunar Lander environment (LunarLander-v3 with continuous controls). The project includes training, evaluation, TensorBoard driven visualization utilities, and Optuna hyperparameter tuning.
+
+**Note: The models folder contains the pretrained model. (![Download the 2DLunarLanderContinuousPPO_final.zip](models\2DLunarLanderContinuousPPO_final.zip))**
 
 ---
 
